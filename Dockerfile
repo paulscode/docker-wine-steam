@@ -1,8 +1,8 @@
-FROM ubuntu
-MAINTAINER Antoine Webanck <antoine.webanck@gmail.com>
+FROM 32bit/ubuntu:16.04
+MAINTAINER Paul Lamb <paul@paulscode.com>
 
 # Creating the wine user and setting up dedicated non-root environment: replace 1001 by your user id (id -u) for X sharing.
-RUN useradd -u 1001 -d /home/wine -m -s /bin/bash wine
+RUN useradd -u 1000 -d /home/wine -m -s /bin/bash wine
 ENV HOME /home/wine
 WORKDIR /home/wine
 
