@@ -1,7 +1,7 @@
 FROM 32bit/ubuntu:16.04
 MAINTAINER Paul Lamb <paul@paulscode.com>
 
-# Creating the wine user and setting up dedicated non-root environment: replace 1001 by your user id (id -u) for X sharing.
+# Creating the wine user and setting up dedicated non-root environment: replace 1000 by your user id (id -u) for X sharing.
 RUN useradd -u 1000 -d /home/wine -m -s /bin/bash wine
 ENV HOME /home/wine
 WORKDIR /home/wine
@@ -21,7 +21,7 @@ ENV WINEARCH win32
 ENV WINEDEBUG -all
 
 # Adding the link to the pulseaudio server for the client to find it.
-ENV PULSE_SERVER unix:/run/user/1001/pulse/native
+ENV PULSE_SERVER unix:/run/user/1000/pulse/native
 
 #########################START  INSTALLATIONS##########################
 
